@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodTunes</title>
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,531;1,531&display=swap" rel="stylesheet">   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!--navigation-->
+    
+    <nav class="topnav" id="myTopnav">
+        <div class="topnav-padding">
+                <a class="topnav-logo" href="index.html"><img src="artwork/_FoodTunes_logo.svg"></a>
+        </div>
+    </nav>
+    
+    <!--header-->
+   
+    <div class="container-fluid">
+        
+      <div class="row-header">
+             <!--Headline-->
+             <div class="headline-wrapper">
+               <h1>Congrats! You found all your stuff.</h1>
+               <p>Now you know how your grocery sounds like. Share it with your friends!</p>
+                 <img class="congrats-image" src="artwork/congrats-bag.svg">
+            <a href="#" class="button-infos button-black">Download your track</a>
+          </div>
+      </div>
+    </div>
+
+    
+    <!--script add new line in form when all is filled-->
+
+    <script> 
+        
+        $(function(){
+            $(document).on("change","input", function(){
+            var allGood=true;
+            var lastInputField="";
+            $("input").each(function() {
+            if ($(this).val() =="") {
+                allGood=false;
+                return false;
+            }
+        });
+
+        if (allGood) {
+            $("<span>" + lastInputField + "<input class='input-field' type='text' id='lastinputfieldId" + lastInputField +
+              "name='lastinputfieldName" + lastInputField + "'></span><br>").appendTo("form");
+        }
+    });
+});
+
+        
+        
+    </script>  
+
+   
+    <footer>   
+        <div class="footer-wrapper">
+            <div class="law-wrapper">
+                <a class="footer-element">© 2020 Linda Maas, Lajal Sakran, Daniela Vogel</a>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

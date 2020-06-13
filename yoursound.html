@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodTunes</title>
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,531;1,531&display=swap" rel="stylesheet">     
+</head>
+<body>
+    
+    <!--navigation-->
+    
+    <nav class="topnav" id="myTopnav">
+        <div class="topnav-padding">
+                <a class="topnav-logo" href="index.html"><img style="widht: 200px" src="artwork/_FoodTunes_logo.svg"></a>
+        </div>
+    </nav>   
+    
+        <div class="container-fluid">
+    <div class="row-header">
+
+           
+<audio id="fish" src="./sounds/fish.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="fish-btn"><img class="food-image" src="artwork/fish.svg"></div>
+
+<audio id="apple" src="./sounds/apple.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="apple-btn"><img class="food-image" src="artwork/apple.svg"></div>
+        
+<audio id="choco" src="./sounds/choco.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="choco-btn"><img class="food-image" src="artwork/choco.svg"></div>
+
+<audio id="banana" src="./sounds/banana.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="banana-btn"><img class="food-image" src="artwork/banana.svg"></div>
+        
+<audio id="tomato" src="./sounds/tomato.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="tomato-btn"><img class="food-image" src="artwork/tomato.svg"></div>
+        
+<audio id="noodles" src="./sounds/noodles.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="noodles-btn"><img class="food-image" src="artwork/noodles.svg"></div>
+        
+<audio id="leek" src="./sounds/leek.mp3" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="leek-btn"><img class="food-image" src="artwork/leek.svg"></div>
+
+<audio id="bread" src="./sounds/bread.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="bread-btn"><img class="food-image" src="artwork/bread.svg"></div>
+        
+<audio id="milk" src="./sounds/milk.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="milk-btn"><img class="food-image" src="artwork/milk.svg"></div>
+                
+<audio id="ice" src="./sounds/ice.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="ice-btn"><img class="food-image" src="artwork/ice.svg"></div>
+        
+<audio id="cheese" src="./sounds/cheese.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="cheese-btn"><img class="food-image"src="artwork/cheese.svg"></div>
+                
+<audio id="steak" src="./sounds/steak.wav" preload="metadata" type="audio/mpeg" loop></audio>
+<div class="btn" id="steak-btn"><img class="food-image" src="artwork/steak.svg"></div>
+
+
+<script>
+var btn = document.getElementsByClassName(btn);
+    
+var fish = document.getElementById('fish');
+var fishBtn = document.getElementById('fish-btn');
+
+var apple = document.getElementById('apple');
+var appleBtn = document.getElementById('apple-btn'); 
+    
+var banana = document.getElementById('banana');
+var bananaBtn = document.getElementById('banana-btn');
+
+var tomato = document.getElementById('tomato');
+var tomatoBtn = document.getElementById('tomato-btn');
+    
+var cheese = document.getElementById('cheese');
+var cheeseBtn = document.getElementById('cheese-btn');
+    
+var leek = document.getElementById('leek');
+var leekBtn = document.getElementById('leek-btn');
+    
+var bread = document.getElementById('bread');
+var breadBtn = document.getElementById('bread-btn');
+    
+var ice = document.getElementById('ice');
+var iceBtn = document.getElementById('ice-btn');
+    
+var milk = document.getElementById('milk');
+var milkBtn = document.getElementById('milk-btn');
+    
+var choco = document.getElementById('choco');
+var chocoBtn = document.getElementById('choco-btn');
+    
+var steak = document.getElementById('steak');
+var steakBtn = document.getElementById('steak-btn');
+    
+var noodles = document.getElementById('noodles');
+var noodlesBtn = document.getElementById('noodles-btn');
+    
+    
+fishBtn.addEventListener('click', function(){
+   fishBtn.classList.toggle('playing');
+   playPause(fish);
+}); 
+
+appleBtn.addEventListener('click', function(){
+   appleBtn.classList.toggle('playing');
+   playPause(apple);
+});
+    
+bananaBtn.addEventListener('click', function(){
+   bananaBtn.classList.toggle('playing');
+   playPause(banana);
+});
+    
+tomatoBtn.addEventListener('click', function(){
+   tomatoBtn.classList.toggle('playing');
+   playPause(tomato);
+});
+    
+cheeseBtn.addEventListener('click', function(){
+   cheeseBtn.classList.toggle('playing');
+   playPause(cheese);
+});
+    
+leekBtn.addEventListener('click', function(){
+   leekBtn.classList.toggle('playing');
+   playPause(leek);
+});
+    
+breadBtn.addEventListener('click', function(){
+   breadBtn.classList.toggle('playing');
+   playPause(bread);
+});
+    
+iceBtn.addEventListener('click', function(){
+   iceBtn.classList.toggle('playing');
+   playPause(ice);
+});
+    
+milkBtn.addEventListener('click', function(){
+   milkBtn.classList.toggle('playing');
+   playPause(milk);
+});
+    
+chocoBtn.addEventListener('click', function(){
+   chocoBtn.classList.toggle('playing');
+   playPause(choco);
+});
+    
+steakBtn.addEventListener('click', function(){
+   steakBtn.classList.toggle('playing');
+   playPause(steak);
+});
+    
+noodlesBtn.addEventListener('click', function(){
+   noodlesBtn.classList.toggle('playing');
+   playPause(noodles);
+});
+
+
+
+function playPause(song){
+   if (song.paused && song.currentTime >= 0 && !song.ended) {
+      song.play();
+   } else {
+      song.pause();
+   }
+}
+    
+</script>
+                                          
+</div>
+    </div>
+    
+    <div class="button-section">
+        <a href="index.html" class="button-infos button-blue">New list</a>
+ 
+        <a href="congrats.html" class="button-fake">.</a>
+    </div>   
+
+    
+   
+    <footer>   
+        <div class="footer-wrapper">
+            <div class="law-wrapper">
+                <a class="footer-element">© 2020 Linda Maas, Lajal Sakran, Daniela Vogel</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
